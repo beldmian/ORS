@@ -1,0 +1,10 @@
+.nav-wrapper {
+    padding: 0 10px;
+}
+.main {
+    min-height: 600px;
+    margin-top: 10px;
+}
+.sidenav-margin {
+    margin: 10px;
+}

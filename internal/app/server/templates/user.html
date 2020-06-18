@@ -1,0 +1,21 @@
+{{define "index"}}
+{{template "header" .Title}}
+<div class="row">
+    <div class="col m4">
+        <img src="https://picsum.photos/300/300" alt="" class="circle responsive-img">
+    </div>
+    <div class="col m8">
+        <h1>Username</h1>
+        <hr>
+        <p class="text-gray">test@test.com</p>
+        
+        <div class="collection">
+            <a href="#!" class="collection-item">Event 1</a>
+            <a href="#!" class="collection-item">Event 2</a>
+            <a href="#!" class="collection-item">Event 3</a>
+            <a href="#!" class="collection-item">Event 4</a>
+        </div>
+    </div>
+</div>
+{{template "footer"}}
+{{end}}

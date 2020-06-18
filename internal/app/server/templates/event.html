@@ -1,0 +1,38 @@
+{{define "index"}}
+{{template "header" .Title}}
+<div class="row">
+    <div class="content col m6 s12">
+        <h1>Event title</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nam tempore saepe officiis obcaecati nulla, accusantium eligendi veritatis eveniet error accusamus sed dolorem ipsum necessitatibus, vero consequuntur reprehenderit quae ipsa laboriosam aliquam fugit! Aut sed accusantium dolores fugiat voluptatem vitae impedit enim sequi omnis ut fugit nostrum ipsam doloremque, animi maiores laborum similique maxime numquam laudantium placeat labore amet! Voluptatem iste voluptas impedit ea unde non totam et sequi? Quod, ipsa, rem rerum sequi aliquam optio voluptate temporibus natus minus impedit ratione fugiat enim cum eaque placeat doloremque cupiditate? Quas, aspernatur! Alias officia consectetur voluptatem quod deleniti nam qui cumque?
+        </p>
+    </div>
+    <div class="col m6 s12">
+        <div class="carousel">
+            <a class="carousel-item" href="#one!"><img src="https://picsum.photos/1000/1000"></a>
+            <a class="carousel-item" href="#two!"><img src="https://picsum.photos/1000/1000"></a>
+            <a class="carousel-item" href="#three!"><img src="https://picsum.photos/1000/1000"></a>
+            <a class="carousel-item" href="#four!"><img src="https://picsum.photos/1000/1000"></a>
+            <a class="carousel-item" href="#five!"><img src="https://picsum.photos/1000/1000"></a>
+        </div>
+
+    <!-- Modal Trigger -->
+    <a class="waves-effect waves-light btn modal-trigger blue darken-3" href="#modal1">Register to event</a>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Register</a>
+        </div>
+    </div>
+
+    </div>
+</div>
+{{template "footer"}}
+{{end}}
+

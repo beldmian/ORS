@@ -1,0 +1,31 @@
+{{define "index"}}
+{{template "header" .Title}}
+<h1 class="center-align">Events</h1>
+
+<div class="row">
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-image">
+                <img src="https://picsum.photos/1000/1000">
+                <span class="card-title">Event Title</span>
+                <a class="btn-floating halfway-fab waves-effect waves-light blue"><i class="material-icons">arrow_forward</i></a>
+            </div>
+            <div class="card-content">
+                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
+                    require little markup to use effectively.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ul class="pagination center-align">
+    <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <li class="active blue darken-2"><a href="#!">1</a></li>
+    <li class="waves-effect"><a href="#!">2</a></li>
+    <li class="waves-effect"><a href="#!">3</a></li>
+    <li class="waves-effect"><a href="#!">4</a></li>
+    <li class="waves-effect"><a href="#!">5</a></li>
+    <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+</ul>
+{{template "footer"}}
+{{end}}

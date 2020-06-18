@@ -1,0 +1,5 @@
+log_level = "debug"
+# log_type = "stdout"
+log_type = "file"
+log_file = "./log/file.log"
+port = ":8080"
