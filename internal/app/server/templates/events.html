@@ -3,19 +3,20 @@
 <h1 class="center-align">Events</h1>
 
 <div class="row">
+    {{ range .Events }}
     <div class="col s12 m4">
         <div class="card">
             <div class="card-image">
-                <img src="https://picsum.photos/1000/1000">
-                <span class="card-title">Event Title</span>
+                <img src="{{.Image}}">
                 <a class="btn-floating halfway-fab waves-effect waves-light blue"><i class="material-icons">arrow_forward</i></a>
             </div>
             <div class="card-content">
-                <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I
-                    require little markup to use effectively.</p>
+                <span class="card-title">{{.Name}}</span>
+                <p class="truncate">{{.Desc}}</p>
             </div>
         </div>
     </div>
+    {{ end }}
 </div>
 
 <ul class="pagination center-align">

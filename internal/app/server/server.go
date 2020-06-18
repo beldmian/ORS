@@ -66,4 +66,5 @@ func (s *Server) configureRouter() {
 	s.router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(
 		http.Dir("./internal/app/server/static/"))))
 	s.router.HandleFunc("/", s.indexHandler)
+	s.router.HandleFunc("/events", s.eventsHandler)
 }
