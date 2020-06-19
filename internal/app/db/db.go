@@ -23,14 +23,25 @@ func New(uri string) Datebase {
 	return db
 }
 
-// GetEvents ...
-func (db Datebase) GetEvents() ([]types.Event, error) {
+// GetCollection ...
+func (db Datebase) GetCollection(name string) (*mongo.Collection, error) {
 	ctx5, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
 	Client, err := mongo.Connect(ctx5, options.Client().ApplyURI(db.URI))
 	if err != nil {
 		return nil, err
 	}
-	eventsCollection := Client.Database("ors").Collection("events")
+	Collection := Client.Database("ors").Collection(name)
+	return Collection, nil
+}
+
+// GetEvents ...
+func (db Datebase) GetEvents() ([]types.Event, error) {
+	eventsCollection, err := db.GetCollection("events")
+	if err != nil {
+		return nil, err
+	}
+
 	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 	defer cancel()
 	cur, err := eventsCollection.Find(ctx, bson.D{})
@@ -38,7 +49,9 @@ func (db Datebase) GetEvents() ([]types.Event, error) {
 		return nil, err
 	}
 	defer cur.Close(ctx)
+
 	var events []types.Event
+
 	for cur.Next(ctx) {
 		var result types.Event
 		err := cur.Decode(&result)
@@ -47,8 +60,10 @@ func (db Datebase) GetEvents() ([]types.Event, error) {
 		}
 		events = append(events, result)
 	}
+
 	if err := cur.Err(); err != nil {
 		return nil, err
 	}
+
 	return events, nil
 }
