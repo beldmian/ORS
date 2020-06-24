@@ -9,10 +9,11 @@ import (
 
 // SeverConfig ...
 type SeverConfig struct {
-	Port     string `toml:"port"`
-	LogLevel string `toml:"log_level"`
-	LogType  string `toml:"log_type"`
-	LogFile  string `toml:"log_file"`
+	Port        string `toml:"port"`
+	LogLevel    string `toml:"log_level"`
+	LogType     string `toml:"log_type"`
+	LogFile     string `toml:"log_file"`
+	DatebaseURI string `toml:"datebase_uri"`
 }
 
 // NewConfig ...

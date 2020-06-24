@@ -11,7 +11,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	db := db.New("mongodb+srv://beld:124252@cluster0-nii6i.mongodb.net/?retryWrites=true&w=majority")
+	db := db.New(serverConfig.DatebaseURI)
 	server := server.New(serverConfig, db)
 	if err := server.Start(); err != nil {
 		panic(err)
