@@ -67,4 +67,5 @@ func (s *Server) configureRouter() {
 		http.Dir("./internal/app/server/static/"))))
 	s.router.HandleFunc("/", s.indexHandler)
 	s.router.HandleFunc("/events", s.eventsHandler)
+	s.router.HandleFunc("/events/{name}", s.eventHandler)
 }

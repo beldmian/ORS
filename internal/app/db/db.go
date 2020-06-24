@@ -67,3 +67,20 @@ func (db Datebase) GetEvents() ([]types.Event, error) {
 
 	return events, nil
 }
+
+// GetEvent ...
+func (db Datebase) GetEvent(name string) (types.Event, error) {
+	events, err := db.GetCollection("events")
+	if err != nil {
+		return types.Event{}, err
+	}
+
+	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+	defer cancel()
+
+	var result types.Event
+	if err := events.FindOne(ctx, bson.M{"name": name}).Decode(&result); err != nil {
+		return types.Event{}, err
+	}
+	return result, nil
+}
